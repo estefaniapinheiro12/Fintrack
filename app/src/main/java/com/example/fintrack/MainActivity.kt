@@ -9,8 +9,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.fintrack.screen.SplashScreen
 import com.example.fintrack.ui.theme.FintrackTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,17 +24,36 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             FintrackTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                FintrackApp()
             }
         }
     }
 }
 
+@Composable
+fun FintrackApp() {
+    var showSplash by remember { mutableStateOf(true) }
+
+    if (showSplash) {
+        SplashScreen(
+            onNavigateToMain = {
+                showSplash = false
+            }
+        )
+    } else {
+        MainContent()
+    }
+}
+
+@Composable
+fun MainContent() {
+    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+        Greeting(
+            name = "Android",
+            modifier = Modifier.padding(innerPadding)
+        )
+    }
+}
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
