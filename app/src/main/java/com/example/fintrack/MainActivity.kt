@@ -15,7 +15,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.example.fintrack.navigation.AppNavHost
-import com.example.fintrack.screen.SplashScreen
+import com.example.fintrack.ui.screen.SplashScreen
 import com.example.fintrack.ui.theme.FintrackTheme
 
 class MainActivity : ComponentActivity() {

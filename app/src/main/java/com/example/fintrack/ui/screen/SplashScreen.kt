@@ -1,5 +1,6 @@
-package com.example.fintrack.screen
+package com.example.fintrack.ui.screen
 
+import android.content.res.Configuration
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -142,7 +143,7 @@ fun SplashScreenPreview() {
     }
 }
 
-@Preview(showBackground = true, uiMode = android.content.res.Configuration.UI_MODE_NIGHT_YES)
+@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 fun SplashScreenDarkPreview() {
     FintrackTheme(darkTheme = true) {

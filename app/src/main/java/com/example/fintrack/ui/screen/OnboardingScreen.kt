@@ -1,4 +1,4 @@
-package com.example.fintrack.screen
+package com.example.fintrack.ui.screen
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
