@@ -72,8 +72,13 @@ dependencies {
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
-    // Navigation Compose (se ainda não tiver)
+    // Navigation Compose 
     implementation("androidx.navigation:navigation-compose:2.7.7")
+
+    implementation("org.jetbrains.exposed:exposed-core:0.46.0")
+    implementation("org.jetbrains.exposed:exposed-dao:0.46.0")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.46.0")
+    implementation("com.zaxxer:HikariCP:5.1.0") // Pool de conexões
 
     // Testing
     testImplementation(libs.junit)
